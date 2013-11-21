@@ -1,0 +1,21 @@
+{% extends "MelnikHomeworkBundle::layout.html.twig" %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container">
+        {% for car in cars %}
+            <h3>{{ car.make }}</h3>
+            <h4>{{ car.model }}</h4>
+            <h4>{{ car.year }}</h4>
+            <h4>{{ car.comment }}</h4>
+            <h4>Number Built - {{ car.numberBuilt }}</h4>
+            <h4>Top Speed - {{ car.topSpeed }}</h4>
+            {% for assembly in car.assemblys %}
+                <h6>{{ assembly.assembly }}</h6>
+            {% endfor %}
+        {% endfor %}
+        <div class="starter-template">
+            {{ include('MelnikHomeworkBundle:Default:date.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

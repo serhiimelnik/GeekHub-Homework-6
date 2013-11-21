@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}GeekHub Homework 5{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
+    {% stylesheets '@MelnikHomeworkBundle/Resources/public/css/*.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+
+    {% javascripts 'js/bootstrap.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock javascripts %}
+
+{% block body %}
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">GeekHub Homework 6</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="{% if app.request.attributes.get('_route') == 'melnik_homework_index' %}active{% endif %}"><a href="index">Index</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'melnik_homework_cars' %}active{% endif %}"><a href="car">Car</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'melnik_homework_about' %}active{% endif %}"><a href="about">About</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'melnik_homework_contact' %}active{% endif %}"><a href="contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock body %}

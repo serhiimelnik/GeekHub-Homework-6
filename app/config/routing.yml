@@ -1,0 +1,4 @@
+melnik_homework:
+    resource: "@MelnikHomeworkBundle/Resources/config/routing.yml"
+    prefix:   /
+
