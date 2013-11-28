@@ -1,7 +1,7 @@
 parameters:
-#    melnik_homework.example.class: Melnik\HomeworkBundle\Example
+    DiffCar.class: Melnik\HomeworkBundle\DiffCar
 
 services:
-#    melnik_homework.example:
-#        class: %melnik_homework.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    diff_car:
+        class: %DiffCar.class%
+        arguments: ["@doctrine"]

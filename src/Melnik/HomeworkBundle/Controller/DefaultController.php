@@ -23,8 +23,8 @@ class DefaultController extends Controller
 
     public function carAction()
     {
-        $repository = $this->getDoctrine()->getRepository('MelnikHomeworkBundle:Car');
-        $cars = $repository->findAll();
+        $DiffCar = $this->get('diff_car');
+        $cars = $DiffCar->getAllCar();
 
         return $this->render('MelnikHomeworkBundle:Default:car.html.twig', array(
             'cars' => $cars));
