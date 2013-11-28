@@ -1,6 +1,8 @@
 melnik_homework_homepage:
-    pattern:  /index
-    defaults: { _controller: MelnikHomeworkBundle:Default:index }
+    pattern:  /{_locale}/index
+    defaults: { _controller: MelnikHomeworkBundle:Default:index, _locale: en }
+    requirements:
+            _locale: en|uk
 
 melnik_homework_about:
     pattern: /about
